@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('App', [])
+        app.controller('Ctrl', function ($scope) {
+            $scope.class = [
+                { name: "Jesse" },
+                { name: "Dave" },
+                { name: "Mike" },
+                { name: "Kasia" },
+                { name: "Brandon" },
+                { name: "Chris" }
+            ];
+        });
+    </script>
+</head>
+<body ng-app="App">
+    <div ng-controller="Ctrl">
+        <span><b>Students in Class:</b></span><br />
+        <p ng-repeat="students in class | orderBy:'name'">{{students.name}}</p>
+    </div>
+</body>
+</html>
